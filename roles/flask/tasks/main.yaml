@@ -14,26 +14,14 @@
   pip: name=tensorflow==2.9.1
 - name: install pillow
   pip: name=Pillow==9.1.1
-- name: copying app file with playbook
-  copy:
-    src: /Users/masoudmoeini/Desktop/Terraform-Ansible-GCP-FlaskWebApplication/app.py
-    dest: ./home/masod_atc/app.py
-- name: copying main file with playbook
-  copy:
-    src: /Users/masoudmoeini/Desktop/Terraform-Ansible-GCP-FlaskWebApplication/main.py
-    dest: ./home/masod_atc/main.py
-- name: copying  minst file with playbook
-  copy:
-    src: /Users/masoudmoeini/Desktop/Terraform-Ansible-GCP-FlaskWebApplication/minst.py
-    dest: ./home/masod_atc/minst.py
-- name: copying model file with playbook
-  copy:
-    src: /Users/masoudmoeini/Desktop/Terraform-Ansible-GCP-FlaskWebApplication/model.h5
-    dest: ./home/masod_atc/model.h5
-- name: copying template folder with playbook
-  copy:
-    src: /Users/masoudmoeini/Desktop/Terraform-Ansible-GCP-FlaskWebApplication/template
-    dest: ./home/masod_atc/template
+- name: Your copy task
+  copy: src={{ item.src }} dest={{ item.dest }}
+  with_items:
+    - { src: '/Users/masoudmoeini/Desktop/Terraform-Ansible-GCP-FlaskWebApplication/app.py', dest: './home/masod_atc/app.py' }
+    - { src: '/Users/masoudmoeini/Desktop/Terraform-Ansible-GCP-FlaskWebApplication/main.py', dest: './home/masod_atc/main.py' }
+    - { src: '/Users/masoudmoeini/Desktop/Terraform-Ansible-GCP-FlaskWebApplication/minst.py', dest: './home/masod_atc/minst.py' }
+    - { src: '/Users/masoudmoeini/Desktop/Terraform-Ansible-GCP-FlaskWebApplication/model.h5', dest: './home/masod_atc/model.h5' }
+    - { src: ' /Users/masoudmoeini/Desktop/Terraform-Ansible-GCP-FlaskWebApplication/template', dest: './home/masod_atc/template' }
 - name: execute flaskstroy application, run my script!
   command: python3 ./home/masod_atc/main.py
 
