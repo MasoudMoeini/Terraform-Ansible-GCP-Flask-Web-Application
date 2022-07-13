@@ -16,3 +16,17 @@ ssh-keygen -t ed25519 -f ~/.ssh/ansbile_17bae99b3a0c -C ansible-flask-app
 cat ~/.ssh/ansbile_17bae99b3a0c.pub
 ```
 ## Set up terraform 
+```
+terraform init
+```
+```
+terraform plan 
+```
+```
+terraform apply 
+```
+Terraform prints the VM's external IP address and port 80 has been set in firewall configuration to access vm<br/>
+Web-server-URL(nginx_ip:80):<br/>
+```
+http://IP_ADDRESS:5000
+```
