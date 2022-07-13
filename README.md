@@ -1,4 +1,4 @@
-# Terraform Ansible GCP FlaskWebApplication
+# Terraform Ansible GCP Flask Web Application
 [Reference 1](https://cloud.google.com/docs/terraform/get-started-with-terraform) <br/>
 [Reference 2](https://github.com/antonputra/tutorials/tree/main/lessons/101)<br/>
 Milestones:<br/>
