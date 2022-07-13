@@ -30,7 +30,7 @@ In case of error handelling
 terraform plan -refresh-only
 terraform apply -refresh-only
 ```
-Terraform prints the VM's external IP address and port 80 has been set in firewall configuration to access vm<br/>
+Terraform prints the VM's external IP address and port 5000 has been set in firewall configuration to access vm<br/>
 Web-server-URL(nginx_ip:5000):<br/>
 ```
 http://IP_ADDRESS:5000
