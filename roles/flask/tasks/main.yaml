@@ -1,7 +1,7 @@
 ---
 - name: Ensure Flask is at the latest version
   apt:
-    name: python-pip
+    name: python3-pip
     state: latest
     update_cache: yes
 #sudo apt-get update; sudo apt-get install -yq build-essential python-pip rsync; pip install flask
@@ -9,11 +9,11 @@
 - name: install flask with pip
   pip: name=flask
 - name: copying file with playbook
-      copy:
-        src: /Users/masoudmoeini/Desktop/Terraform-Ansible-GCP-FlaskWebApplication/app.py
-        dest: /app.py
-- name: execute install script
-  script: app.py
+  copy:
+    src: /Users/masoudmoeini/Desktop/Terraform-Ansible-GCP-FlaskWebApplication/app.py
+    dest: /home/masod_atc/app.py
+- name: execute flask application, run my script!
+  command: python3 /home/masod_atc/app.py
 
  #- name: install modules in a virtualenv
   #  pip: #requirements: /home/{{ ansible_ssh_user }}/{{ app_name }}/requirements.txt

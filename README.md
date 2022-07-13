@@ -30,3 +30,20 @@ Web-server-URL(nginx_ip:5000):<br/>
 ```
 http://IP_ADDRESS:5000
 ```
+At any time to acces ip address by:
+```
+terraform output
+```
+You should see something similar in browser:<br/>
+```
+```
+To remove resources:
+```
+terraform destroy
+```
+```
+rm ~/.ssh/ansbile*
+```
+Delete SSH public key from GCP project
+
+
