@@ -6,6 +6,9 @@
     update_cache: yes
 #sudo apt-get update; sudo apt-get install -yq build-essential python-pip rsync; pip install flask
 # Install system apt packages
+- name: install modules in a virtualenv
+   pip:
+     requirements: /home/{{ ansible_ssh_user }}/{{ app_name }}/requirements.txt
 - name: install flask with pip
   pip: name=flask
 - name: install numpy with pip
