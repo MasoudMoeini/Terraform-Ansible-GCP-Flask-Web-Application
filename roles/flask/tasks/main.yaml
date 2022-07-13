@@ -4,8 +4,7 @@
     name: python3-pip
     state: latest
     update_cache: yes
-#sudo apt-get update; sudo apt-get install -yq build-essential python-pip rsync; pip install flask
-# Install system apt packages
+#sudo apt-get update; sudo apt-get install -yq build-essential python-pip rsync; pip #install flask
 - name: install flask with pip
   pip: name=flask
 - name: copying file with playbook
@@ -15,6 +14,5 @@
 - name: execute flaskstroy application, run my script!
   command: python3 ./home/masod_atc/app.py
 
- #- name: install modules in a virtualenv
-  #  pip: #requirements: /home/{{ ansible_ssh_user }}/{{ app_name }}/requirements.txt
+
      
