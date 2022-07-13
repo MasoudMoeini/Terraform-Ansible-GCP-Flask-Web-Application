@@ -1,14 +1,13 @@
 locals {
   project_id       = "warm-rookery-325409"
   network          = "default"
-  image            = "debian-cloud/debian-9"
+  image            = "ubuntu-2004-focal-v20211212"
   ssh_user         = "ansible-flask-app"
   private_key_path = "~/.ssh/ansbile_17bae99b3a0c"
 }
 provider "google" {
   project = local.project_id
   region  = "us-central1"
-  zone    = "us-central1-c"
 }
 resource "google_service_account" "flask-app" {
   account_id = "flask-app-demo"
@@ -26,10 +25,9 @@ resource "google_compute_firewall" "flask" {
 }
 resource "google_compute_instance" "default" {
   name         = "flask-vm"
-  machine_type = "f1-micro"
-  zone         = "us-central1-c"
+  machine_type = "e2-micro"
+  zone         = "us-central1-a"
   #tags         = ["ssh"]
-
   boot_disk {
     initialize_params {
         image = local.image
