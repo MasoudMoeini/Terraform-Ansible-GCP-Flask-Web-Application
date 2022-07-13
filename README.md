@@ -26,7 +26,7 @@ terraform plan
 terraform apply 
 ```
 Terraform prints the VM's external IP address and port 80 has been set in firewall configuration to access vm<br/>
-Web-server-URL(nginx_ip:80):<br/>
+Web-server-URL(nginx_ip:5000):<br/>
 ```
 http://IP_ADDRESS:5000
 ```
