@@ -4,19 +4,12 @@
     name: python3-pip
     state: latest
     update_cache: yes
-#sudo apt-get update; sudo apt-get install -yq build-essential python-pip rsync; pip install flask
-# Install system apt packages
-- name: install modules in a virtualenv
-   pip:
-     requirements: /home/{{ ansible_ssh_user }}/{{ app_name }}/requirements.txt
-- name: install flask with pip
-  pip: name=flask
-- name: install numpy with pip
-  pip: name=numpy
-- name: install tensorflow with pip
-  pip: name=tensorflow==2.9.1
-- name: install pillow
-  pip: name=Pillow==9.1.1
+#installing libraries
+- name: install python libraries
+  pip:
+    requirements: ./requirements.txt
+#- name: install modules in a virtualenv
+  #  pip: #requirements: /home/{{ ansible_ssh_user }}/{{ app_name }}/requirements.txt
 - name: Your copy task
   copy: src={{ item.src }} dest={{ item.dest }}
   with_items:
@@ -28,6 +21,4 @@
 - name: execute flaskstroy application, run my script!
   command: python3 ./home/masod_atc/main.py
 
- #- name: install modules in a virtualenv
-  #  pip: #requirements: /home/{{ ansible_ssh_user }}/{{ app_name }}/requirements.txt
      
