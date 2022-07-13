@@ -1,0 +1,8 @@
+---
+- name: Install  Flask
+  hosts: all
+  remote_user: ansible-flask-app
+  become: yes
+
+  roles:
+  - flask

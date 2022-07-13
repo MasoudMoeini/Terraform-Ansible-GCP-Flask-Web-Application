@@ -3,7 +3,7 @@
 [Reference 2](https://github.com/antonputra/tutorials/tree/main/lessons/101)<br/>
 Milestones:<br/>
 - Configuration of Google Cloud Platform<br/>
-- Set up trafform infrastructure <br/>
+- Set up terraform infrastructure <br/>
 - Set up Ansible PlayBook <br/>
 ## GCP Configuration
 To enable terraform to access GCP you need pair ssh key configuration between your local machine and GCP<br/>

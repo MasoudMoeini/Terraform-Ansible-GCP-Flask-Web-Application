@@ -1,0 +1,18 @@
+---
+- name: Ensure Flask is at the latest version
+  apt:
+    name: nginx
+    state: latest
+    update_cache: yes
+
+- name: Make sure Nginx is running
+  systemd:
+    state: started
+    name: nginx
+
+- name: install flask with pip
+  pip: name=flask
+- name: start flask
+  shell: "flask run"
+    environment:
+      FLASK_APP: /var/www/main.py
