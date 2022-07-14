@@ -9,10 +9,16 @@
   pip: name=flask
 - name: copying file with playbook
   copy:
-    src: "/Users/masoudmoeini/Desktop/Terraform-Ansible-GCP-FlaskWebApplication/app.py"
-    dest: "./home/masod_atc/app.py"
-- name: execute flaskstroy application, run my script!
-  command: python3 ./home/masod_atc/app.py
+    src: "app.py"
+    dest: "/home/masod_atc/app.py"
+#- name: execute flaskstroy application, run my script!
+ # command: python3 /home/masod_atc/app.py
 
+- name: template systemd service config
+  copy:
+    src: .service
+    dest: /home/masod_atc/flask.service
+- name: Start Systemd Flask App Service 
+  systemd: name=flask state=started 
 
      
