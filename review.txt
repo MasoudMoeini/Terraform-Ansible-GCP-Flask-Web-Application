@@ -1,6 +1,6 @@
 openssl rand -hex 6
 #syntax error!
-ansible-playbook  -i 34.66.96.149, --private-key ~/.ssh/ansbile_17bae99b3a0c flask.yaml
+ansible-playbook  -i 34.172.30.150, --private-key ~/.ssh/ansbile_17bae99b3a0c flask.yaml
 
 for tensorflow web-app requirements are:
 Flask
@@ -8,3 +8,4 @@ numpy
 tensorflow==2.9.1
 Pillow==9.1.1
 and file model.h5 must be copied to the remote resource
+pip install tensorflow --ignore-installed
