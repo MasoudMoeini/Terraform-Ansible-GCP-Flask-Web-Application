@@ -27,7 +27,7 @@ resource "google_compute_instance" "default" {
   name         = "flask-vm"
   machine_type = "e2-micro"
   zone         = "us-central1-a"
-  #tags         = ["ssh"]
+  tags         = ["ssh"]
   boot_disk {
     initialize_params {
         image = local.image

@@ -7,17 +7,17 @@
 #sudo apt-get update; sudo apt-get install -yq build-essential python-pip rsync; pip #install flask
 - name: install flask with pip
   pip: name=flask
-- name: copying file with playbook
+- name: copying app file with playbook
   copy:
-    src: "app.py"
-    dest: "/home/masod_atc/app.py"
+    src: app.py
+    dest: $HOME/app.py
 #- name: execute flaskstroy application, run my script!
  # command: python3 /home/masod_atc/app.py
 
-- name: template systemd service config
+- name: copy template systemd service config
   copy:
     src: .service
-    dest: /home/masod_atc/flask.service
+    dest: $HOME/flask.service
 - name: Start Systemd Flask App Service 
   systemd: name=flask state=started 
 
