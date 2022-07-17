@@ -1,8 +1,7 @@
 ---
 - name: Install  Flask
-  hosts: all
-  remote_user: ansible-flask-app
-  become: yes
+  hosts: localhost
+  connection: local
 
   roles:
   - flask
