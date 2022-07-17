@@ -2,7 +2,7 @@
 Description=Systemd instance to serve flask App
 [Service]
 User= "root"
-WorkingDirectory= /root/app.py
+WorkingDirectory= /root
 ExecStart= /root/python3 app.py
 Restart=always
 
