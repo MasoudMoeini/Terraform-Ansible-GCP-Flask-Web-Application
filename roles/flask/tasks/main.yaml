@@ -10,18 +10,18 @@
 - name: Your copy task
   copy: src={{ item.src }} dest={{ item.dest }}
   with_items:
-    - { src: 'requirements.txt', dest: '/home/masod_atc/requirements.txt' }
-    - { src: 'app.py', dest: '/home/masod_atc/app.py' }
-    - { src: 'main.py', dest: '/home/masod_atc/main.py' }
-    - { src: 'minst.py', dest: '/home/masod_atc/minst.py' }
-    - { src: 'model.h5', dest: '/home/masod_atc/model.h5' }
-    - { src: 'templates/', dest: '/home/masod_atc/templates/' }
+    - { src: 'requirements.txt', dest: '$HOME/requirements.txt' }
+    - { src: 'app.py', dest: '$HOME/app.py' }
+    - { src: 'main.py', dest: '$HOME/main.py' }
+    - { src: 'minst.py', dest: '$HOME/minst.py' }
+    - { src: 'model.h5', dest: '$HOME/model.h5' }
+    - { src: 'templates/', dest: '$HOME/templates/' }
 
  
   #installing libraries
 - name: install python libraries
   pip:
-    requirements: /home/masod_atc/requirements.txt
+    requirements: /root/requirements.txt
 #- name: execute flaskstroy application, run my script!
  #command: python3 ./home/masod_atc/main.py
 - name: copy template systemd service config
