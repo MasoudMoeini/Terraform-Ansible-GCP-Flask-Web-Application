@@ -1,10 +1,9 @@
 [Unit]
-Description= Systemd instance to serve flask App
-
+Description=Systemd instance to serve flask App
 [Service]
-User= "flask"
-WorkingDirectory= $HOME
-ExecStart= $HOME/python3 app.py
+User= "root"
+WorkingDirectory= /root/app.py
+ExecStart= /root/python3 app.py
 Restart=always
 
 [Install]

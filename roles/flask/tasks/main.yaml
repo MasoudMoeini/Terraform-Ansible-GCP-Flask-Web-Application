@@ -17,8 +17,8 @@
 - name: copy template systemd service config
   copy:
     src: .service
-    dest: $HOME/flask.service
+    dest: /etc/systemd/system/flask.service
 - name: Start Systemd Flask App Service 
-  systemd: name=flask state=started 
+  systemd: name=flask state=started daemon_reload=yes
 
      

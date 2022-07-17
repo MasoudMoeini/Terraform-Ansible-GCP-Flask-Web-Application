@@ -8,4 +8,9 @@ numpy
 tensorflow==2.9.1
 Pillow==9.1.1
 and file model.h5 must be copied to the remote resource
-ansible-playbook  -i 34.68.188.154, --private-key ~/.ssh/ansbile_17bae99b3a0c flask.yaml
+ansible-playbook  -i 34.122.75.99, --private-key ~/.ssh/ansbile_17bae99b3a0c flask.yaml
+
+sudo systemctl daemon-reload
+sudo systemctl start flask.service
+sudo systemctl status flask.service
+sudo systemctl enable flask.service
