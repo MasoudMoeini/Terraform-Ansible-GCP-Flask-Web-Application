@@ -22,6 +22,7 @@
 - name: install python libraries
   pip:
     requirements: /root/requirements.txt
+    extra_args: --no-cache-dir
 #- name: execute flaskstroy application, run my script!
  #command: python3 ./home/masod_atc/main.py
 - name: copy template systemd service config
@@ -29,6 +30,6 @@
     src: .service
     dest: /etc/systemd/system/flask.service
 - name: Start Systemd Flask App Service 
-  systemd: name=flask state=started daemon_reload=yes
+  systemd: name=flask state=started daemon_reload=yes 
      
 
