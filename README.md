@@ -41,7 +41,8 @@ At any time to acces ip address by:
 terraform output
 ```
 You should see something similar in browser:<br/>
-<img width="419" alt="Screenshot 2022-07-14 at 10 30 31" src="https://user-images.githubusercontent.com/43514418/178939020-9eee33c5-cbb7-4554-aa3d-dce5caf30472.png">
+<img width="771" alt="Screenshot 2022-07-18 at 11 12 33" src="https://user-images.githubusercontent.com/43514418/179482707-9c7bda22-064b-4ef2-8875-cdcc604ebaeb.png">
+
 
 To remove resources:
 ```
