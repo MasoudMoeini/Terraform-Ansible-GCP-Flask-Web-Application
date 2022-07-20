@@ -40,10 +40,8 @@ At any time to acces ip address by:
 ```
 terraform output
 ```
-You should see something similar in browser:<br/>
-<img width="771" alt="Screenshot 2022-07-18 at 11 12 33" src="https://user-images.githubusercontent.com/43514418/179482707-9c7bda22-064b-4ef2-8875-cdcc604ebaeb.png">
-
-
+You should see something similar in browser<br>
+<img width="658" alt="Screenshot 2022-07-20 at 15 09 55" src="https://user-images.githubusercontent.com/43514418/179990443-f6c69aef-6f90-451b-83e1-e30f7ff294f2.png"><br>
 To remove resources:
 ```
 terraform destroy
