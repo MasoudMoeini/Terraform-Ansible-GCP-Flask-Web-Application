@@ -4,24 +4,42 @@
     name: python3-pip
     state: latest
     update_cache: yes
-
-#- name: install modules in a virtualenv
-  #  pip: #requirements: /home/{{ ansible_ssh_user }}/{{ app_name }}/requirements.txt
+- name: Create a destination app directory if it does not exist
+  file:
+    path: /home/app/templates
+    state: directory
 - name: Your copy task
   copy: src={{ item.src }} dest={{ item.dest }}
   with_items:
-    - { src: 'requirements.txt', dest: '$HOME/requirements.txt' }
-    - { src: 'app.py', dest: '$HOME/app.py' }
-    - { src: 'main.py', dest: '$HOME/main.py' }
-    - { src: 'minst.py', dest: '$HOME/minst.py' }
-    - { src: 'model.h5', dest: '$HOME/model.h5' }
-    - { src: 'templates/', dest: '$HOME/templates/' }
+    - { src: 'app.py', dest: '/home/app/app.py' }
+    - { src: 'main.py', dest: '/home/app/main.py'  }
+    - { src: 'minst.py', dest: '/home/app/minst.py' }
+    - { src: 'model.h5', dest: '/home/app/model.h5' }
+    - { src: 'requirements.txt', dest: '/home/app/requirements.txt' }
 
- 
+#- name: install modules in a virtualenv
+  #  pip: #requirements: /home/{{ ansible_ssh_user }}/{{ app_name }}/requirements.txt
+# - name: Your copy task
+#   copy: src={{ item.src }} dest={{ item.dest }}
+#   with_items:
+#     - { src: 'requirements.txt', dest: '$HOME/requirements.txt' }
+#     - { src: 'app.py', dest: '$HOME/app.py' }
+#     - { src: 'main.py', dest: '$HOME/main.py' }
+#     - { src: 'minst.py', dest: '$HOME/minst.py' }
+#     - { src: 'model.h5', dest: '$HOME/model.h5' }
+#     - { src: 'templates/', dest: '$HOME/templates/' }
+
+- name: copy contents of templates directory
+  copy:
+    src: templates/ 
+    dest: /home/app/templates/
+    directory_mode:
+  tags:
+    - dircontent
   #installing libraries
 - name: install python libraries
   pip:
-    requirements: /root/requirements.txt
+    requirements: /home/app/requirements.txt
     extra_args: --no-cache-dir
 #- name: execute flaskstroy application, run my script!
  #command: python3 ./home/masod_atc/main.py

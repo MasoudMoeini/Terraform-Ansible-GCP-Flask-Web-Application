@@ -17,4 +17,5 @@ sudo systemctl enable flask.service --acces error
 
 
 cd /
-sudo python3 /root/main.py --tensorflow error
+which python3
+sudo python3 home/app/main.py --tensorflow error
