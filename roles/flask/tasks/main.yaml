@@ -11,11 +11,11 @@
 - name: Your copy task
   copy: src={{ item.src }} dest={{ item.dest }}
   with_items:
-    - { src: 'app.py', dest: '/home/app/app.py' }
-    - { src: 'main.py', dest: '/home/app/main.py'  }
-    - { src: 'minst.py', dest: '/home/app/minst.py' }
-    - { src: 'model.h5', dest: '/home/app/model.h5' }
-    - { src: 'requirements.txt', dest: '/home/app/requirements.txt' }
+    - { src: 'files/app.py', dest: '/home/app/app.py' }
+    - { src: 'files/main.py', dest: '/home/app/main.py'  }
+    - { src: 'files/minst.py', dest: '/home/app/minst.py' }
+    - { src: 'files/model.h5', dest: '/home/app/model.h5' }
+    - { src: 'files/requirements.txt', dest: '/home/app/requirements.txt' }
 
 #- name: install modules in a virtualenv
   #  pip: #requirements: /home/{{ ansible_ssh_user }}/{{ app_name }}/requirements.txt
@@ -31,7 +31,7 @@
 
 - name: copy contents of templates directory
   copy:
-    src: templates/ 
+    src: files/templates/ 
     dest: /home/app/templates/
     directory_mode:
   tags:
