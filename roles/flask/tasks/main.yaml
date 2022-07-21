@@ -19,15 +19,6 @@
 
 #- name: install modules in a virtualenv
   #  pip: #requirements: /home/{{ ansible_ssh_user }}/{{ app_name }}/requirements.txt
-# - name: Your copy task
-#   copy: src={{ item.src }} dest={{ item.dest }}
-#   with_items:
-#     - { src: 'requirements.txt', dest: '$HOME/requirements.txt' }
-#     - { src: 'app.py', dest: '$HOME/app.py' }
-#     - { src: 'main.py', dest: '$HOME/main.py' }
-#     - { src: 'minst.py', dest: '$HOME/minst.py' }
-#     - { src: 'model.h5', dest: '$HOME/model.h5' }
-#     - { src: 'templates/', dest: '$HOME/templates/' }
 
 - name: copy contents of templates directory
   copy:
